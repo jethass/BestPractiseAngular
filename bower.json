@@ -1,0 +1,21 @@
+{
+  "name": "demongSource",
+  "authors": [
+    "jethass <jethass@hotmail.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "devDependencies": {
+    "angular": "angularjs#~1.4.8",
+    "jquery": "~2.1.4",
+    "angular-route": "~1.4.8",
+    "angular-resource": "~1.4.8"
+  }
+}
