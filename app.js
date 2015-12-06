@@ -2,7 +2,7 @@
 
 angular
    .module('App',['Controllers','Services','ngRoute','ngResource'])
-   .config(Config);
+   .config(['$routeProvider',Config]);
 
 function Config($routeProvider) { 
 	   $routeProvider
