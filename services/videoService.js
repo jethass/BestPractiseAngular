@@ -1,10 +1,10 @@
 (function () {
-
+'use strict';
 
 function Video($http,$q,$resource){
-	var Video = {};
+	var Factory = {};
 	
-	Video.getVideoswithHttp=function(){
+	Factory.getVideoswithHttp=function(){
 	     var deferred = $q.defer();
          $http.get('http://movieapp-sitepointdemos.rhcloud.com/api/movies')
                    .success(function(data,status){
@@ -16,7 +16,7 @@ function Video($http,$q,$resource){
 	}
 
 
-   Video.getVideosWithResources=function(){
+   Factory.getVideosWithResources=function(){
 	     return $resource('http://movieapp-sitepointdemos.rhcloud.com/api/movies/:id',{id:'@_id'},{
 	     	update:{
                      method:'PUT'
@@ -25,12 +25,14 @@ function Video($http,$q,$resource){
 	     
     }
 
-    return Video;
+    return Factory;
 }
 
 angular
    .module('Services',[])
-   .factory('Video',['$http','$q','$resource',Video]);
+   .factory('Video',Video);
+
+Video.$inject=['$http','$q','$resource'];
 
 
 })();

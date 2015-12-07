@@ -1,11 +1,12 @@
 (function () {
+'use strict';
 
 function getVideos($scope,$log,Video){
-	//utilisation le service video avec $http
-	var vm=this;
-	vm.videos=Video.getVideoswithHttp().then(
+    //utilisation le service video avec $http
+    var vm=this;
+    vm.videos=Video.getVideoswithHttp().then(
                         function(data) {
-                        	$log.debug(data);
+                            $log.debug(data);
                             vm.videos = data;
                         },
                         function(msg) {
@@ -19,6 +20,9 @@ function getVideos($scope,$log,Video){
 
 angular
    .module('Controllers',[])
-   .controller('homeController',['$scope','$log','Video',getVideos]);
+   .controller('homeController',getVideos);
+
+getVideos.$inject=['$scope','$log','Video'];
+
 
 })();
