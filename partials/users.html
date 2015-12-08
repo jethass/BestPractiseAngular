@@ -1,0 +1,42 @@
+<table>
+	<tr>
+		<td>id</td>
+		<td>name</td>
+		<td>email</td>
+		<td>website</td>
+		<td>Actions</td>
+	</tr>
+	<tr ng-repeat="user in usersCtrl.users">
+		<td>{{user.id}}</td>
+		<td>{{user.name}}</td>
+		<td>{{user.email}}</td>
+		<td>{{user.website}}</td>
+		<td>
+		   <a  href="javascript:void(0)" ng-click="usersCtrl.showUser(user.id)"> voir user</a>
+		   <a  href="javascript:void(0)" ng-click="usersCtrl.editUser(user.id)"> edit user</a>
+		   <a  href="javascript:void(0)" ng-click="usersCtrl.deleteUser(user.id)"> delete user</a>
+		</td>
+	</tr>
+</table>
+
+
+<div ng-show="usersCtrl.user">
+<br/><br/><br/>
+Show user:
+
+<table >
+	<tr>
+		<td>id: {{usersCtrl.user.id}}</td>
+	</tr>
+	<tr>
+		<td>name: {{usersCtrl.user.name}}</td>
+	</tr>
+	<tr>
+		<td>email: {{usersCtrl.user.email}}</td>
+	</tr>
+	<tr>
+		<td>website: {{usersCtrl.user.website}}</td>
+	</tr>
+</table>
+
+</div>
